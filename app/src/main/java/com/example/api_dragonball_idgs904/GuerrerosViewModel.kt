@@ -9,14 +9,11 @@ import kotlinx.coroutines.launch
 
 class GuerrerosViewModel : ViewModel() {
 
-    //
     private val _characters = MutableStateFlow<List<Character>>(emptyList())
     val characters: StateFlow<List<Character>> = _characters.asStateFlow()
 
-    //
     private val api = DragonBallApi.create()
 
-    //
     init {
         viewModelScope.launch {
             try {
